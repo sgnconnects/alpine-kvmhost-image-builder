@@ -12,6 +12,6 @@ sh $scripts_path/mkimage.sh --tag latest \
 --outdir $outdir \
 --arch $arch \
 --repository $repository \
---extra-repository $extrarepository \
+--repository $extrarepository \
 --profile $profilename
 
