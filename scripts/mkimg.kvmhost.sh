@@ -5,16 +5,18 @@ kernel_cmdline="unionfs_size=512M console=tty0 console=ttyS0,115200"
 serialport="0"
 serialbaudrate="115200"
 kernel_addons=""
-apks="libvirt-daemon qemu-img qemu-system-x86_64 qemu-modules openrc"
+custom_apks="libvirt-daemon qemu-img qemu-system-x86_64 qemu-modules openrc virt-install"
 apkovl="genapkovl-kvmhost.sh"
 hostname="alpinekvmhost"
+
+echo "Alpine KVM Host Image Profile"
 
 profile_kvmhost() {
   $alpineprofile
   kernel_cmdline="$kernel_cmdline"
   syslinux_serial="$serialport $serialbaudrate"
   kernel_addons="$kernel_addons"
-  apks="$apks"
+  apks="$apks $custom_apks"
   apkovl="$apkovl"
   hostname="$hostname"
   local _k _a
@@ -25,5 +27,6 @@ profile_kvmhost() {
     done
   done
   apks="$apks linux-firmware"
+  echo "APKS: $apks"
 }
 
