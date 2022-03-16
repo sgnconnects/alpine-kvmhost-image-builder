@@ -15,9 +15,11 @@ RUN cd /home/build/aports && apk update
 
 COPY ./scripts/mkimg.kvmhost.sh /home/build/aports/scripts/mkimg.kvmhost.sh
 COPY ./scripts/create-image.sh /home/build/aports/scripts/create-image.sh
+COPY ./scripts/genapkovl-kvmhost.sh /home/build/aports/scripts/genapkovl-kvmhost.sh
 
 RUN chmod +x /home/build/aports/scripts/mkimg.kvmhost.sh
 RUN chmod +x /home/build/aports/scripts/create-image.sh
+RUN chmod +x /home/build/aports/scripts/genapkovl-kvmhost.sh
 
 USER build
 RUN abuild-keygen -i -a -n
