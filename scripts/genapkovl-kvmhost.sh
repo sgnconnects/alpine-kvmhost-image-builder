@@ -1,10 +1,14 @@
 #!/bin/sh -e
 
+echo "Gen APK Overlay"
+
 HOSTNAME="$1"
 if [ -z "$HOSTNAME" ]; then
 	echo "usage: $0 hostname"
 	exit 1
 fi
+
+echo "HOSTNAME=$HOSTNAME"
 
 cleanup() {
 	rm -rf "$tmp"
@@ -46,6 +50,7 @@ alpine-base
 openssh
 iptables
 libvirt-daemon
+qemu-system-x86_64
 EOF
 
 rc_add devfs sysinit
