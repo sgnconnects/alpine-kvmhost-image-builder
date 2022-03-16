@@ -4,7 +4,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/community/" | tee -
 RUN apk update
 RUN apk add alpine-sdk build-base apk-tools alpine-conf busybox \
 	fakeroot syslinux xorriso mtools dosfstools grub-efi make \
-	git sudo
+	git sudo squashfs-tools
 
 RUN adduser -h /home/build -D build -G abuild
 
