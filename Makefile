@@ -17,3 +17,6 @@ clean:
 deep_clean:
 	docker rmi alpine-builder
 	rm -rf alpine-kvmhost-latest-x86_64.iso
+
+test:
+	sh scripts/test-image.sh

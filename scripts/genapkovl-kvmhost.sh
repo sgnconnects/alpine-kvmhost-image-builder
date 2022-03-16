@@ -50,6 +50,7 @@ alpine-base
 openssh
 iptables
 libvirt-daemon
+qemu-img
 qemu-system-x86_64
 EOF
 
