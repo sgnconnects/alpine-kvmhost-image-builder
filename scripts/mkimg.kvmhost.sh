@@ -1,7 +1,7 @@
 #! /bin/sh
 
 alpineprofile="profile_standard"
-kernel_cmdline=""
+kernel_cmdline="unionfs_size=512M console=tty0 console=ttyS0,115200"
 serialport="0"
 serialbaudrate="115200"
 kernel_addons=""
